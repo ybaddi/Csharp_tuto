@@ -7,7 +7,9 @@ namespace Csharp_tuto.Day1
 {
     class TP2
     {
-        static void Main()
+        static void Main3()
+
+
         {
             Console.WriteLine(CalculeIntersction());
         }
