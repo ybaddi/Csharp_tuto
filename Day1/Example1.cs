@@ -188,23 +188,250 @@ public class
         string valuestring = "this is a string";
         Console.WriteLine(valuestring.Length);
 
-        // indexof
+        // indexof : return index of string passed as param
+        Console.WriteLine(valuestring.IndexOf("is a"));
         //Remove
+        String substring1 = valuestring.Remove(10,6);
+        Console.WriteLine(substring1);
         //substring
+        String substring2 = valuestring.Substring(10);
+        Console.WriteLine(substring2);
         //insert
+        Console.WriteLine(valuestring.Insert(11, "added "));
         //Replace
+        string substring3 = valuestring.Replace("is", "add");
+        Console.WriteLine(substring3);
         //compare
+        Console.WriteLine(string.Compare(valuestring, substring3));
+        Console.WriteLine(string.Compare("baddi", "Baddi", StringComparison.OrdinalIgnoreCase));
         // equals
-        //padgirht
-        //trim
-        // tolwer
-        //toupper
-        //format
+        Console.WriteLine(string.Equals("baddi", "Baddi", StringComparison.OrdinalIgnoreCase));
+        Console.WriteLine(string.Equals("baddi", "Baddi", StringComparison.Ordinal));
 
-        // null
-        int? x_1_1 = null;
-        Console.WriteLine(x_1_1 ?? 50);
+
+        //padgirht
+        string valuestring2 = "  Hello World hello world hello world hello world  ";
+        String substring4 = valuestring2.Substring(17);
+        Console.WriteLine(substring4.PadRight(20, '.'));
+
+        //trim
+        Console.WriteLine(valuestring2.Trim());
+        // tolwer
+        Console.WriteLine(valuestring2.ToLower());
+        //toupper
+        Console.WriteLine(valuestring2.ToUpper());
+        //format
+        string valuestring3 = string.Format(
+            " {1}, \n {0}, {2}, et {3}", 
+            "baddi", "youssef", "adil", "aymen");
+        Console.WriteLine(valuestring3);
+
+        Console.Write("Exactly what i typed");
+        Console.Write("\n");
+        Console.Write(@"Exactly what i typed");
+
+        string str_1_1 = "un guillemet \" , un anti-slacsh \\, un retour a la ligne \n";
+        string str_1_2 = @"un guillemet "" , un anti-slacsh \, un retour a la ligne 
+            ";
+        Console.Write(str_1_1);
+             Console.WriteLine(str_1_2);
+
+
+       // null
+       int ? x_1_1 = null;
+       Console.WriteLine(x_1_1 ?? 50);
+
+        bool? isTrue_1;
+        int? res = 0 ;
+        int? value = null;
+        if (value == null)
+        {
+            res = default(int);
+            isTrue_1 = default(bool);
+            Console.WriteLine(isTrue_1);
+        }
+        else res = (value < 0) ? -value : value;
+
+        Console.WriteLine(res);
+
+        Type t = typeof(int);
+        Console.WriteLine(t);
+
+        // Function
+
+        SayHello();
+
+
+        // arrays
+
+        int[] arrayOfInt;
+
+        // allocation du memoire
+
+        int[] arrayofInt_1 = new int[10];
+        arrayOfInt = new int[3];
+
+        // allocation du memoire et initialisation
+        int[] arrayOfint_2 = new int[] { 3, 4, 5, 1, 2,  6, 7, 8, 9 };
+
+        
+        // index access
+        arrayOfInt[1] = 23;
+        arrayOfInt[2] = 20;
+        arrayOfInt[0] = 30;
+
+        Console.WriteLine("valeur de l'index 0 est : {0}", arrayOfInt[0]);
+
+        string[] arrayOfString = { "baddi", "youssef", "adil", "aymen" };
+        var arrayOfString_2 = new[] { "baddi", "youssef", "adil", "aymen" };
+
+        object[] arrayOfObject = { "baddi", 1, "youssef", 2 };
+        Console.WriteLine("type of elemenet in index 0 is {0}",
+            arrayOfObject[0].GetType());
+        Console.WriteLine("type of elemenet in index 1 is {0}",
+            arrayOfObject[1].GetType());
+
+        Console.WriteLine("size od table is {0}",
+            arrayOfObject.Length);
+
+        for(int j = 0; j< arrayOfString.Length; j++)
+        {
+            Console.WriteLine("array {0}: value: {1}",
+                j, arrayOfString[j]);
+        }
+
+        foreach (string item in arrayOfString)
+        {
+            Console.WriteLine("value: {0}",
+                item);
+        }
+
+        // multi-dimension array
+        string[,] array2dOfString = new string[2, 2]
+            {{"baddi" , "youssef" },{"adil", "aymen"}};
+
+        Console.WriteLine("value of [0,0]: {0}",
+               array2dOfString.GetValue(0,1));
+
+        for (i = 0; i < array2dOfString.GetLength(0); i++)
+        {
+            for (int j = 0; j < array2dOfString.GetLength(1); j++)
+            {
+                Console.WriteLine("array {0},{1}: value: {2}",
+                    i,j, array2dOfString.GetValue(i,j));
+            }
+                      
+        }
+
+ // function
+            PrintStringArray(array2dOfString, "foreach");
+            PrintStringArray(array2dOfString, "for");
+
+        // sort array
+        PrintIntArray(arrayOfint_2, "foreach");
+        Array.Sort(arrayOfint_2);
+        PrintIntArray(arrayOfint_2,"foreach");
+
+        // reverse sort
+        Array.Reverse(arrayOfint_2);
+        PrintIntArray(arrayOfint_2, "foreach");
+
+        // get index of elemenet
+        Console.WriteLine(" 9 at index {0}",
+            Array.IndexOf(arrayOfint_2, 9));
+        Console.WriteLine(" 4 at index {0}",
+            Array.IndexOf(arrayOfint_2, 4));
+
+        // sett value of index
+        arrayOfint_2.SetValue(33, 5);
+        PrintIntArray(arrayOfint_2, "foreach");
+
+        //copy of tables
+        int[] srcArray = { 1, 2, 3 };
+        int[] dstArray = new int[3];
+        int startIn = 1;
+        int lenght = 2;
+
+        Array.Copy(srcArray,startIn, dstArray,startIn,lenght);
+        PrintIntArray(dstArray, "foreach");
+
+        Array annotherArray = Array.CreateInstance(typeof(int), 20);
+        //PrintIntArray(annotherArray, "foreach");
+        Array annotherIntArray = Array.CreateInstance(typeof(int), 10);
+
+        srcArray.CopyTo(annotherArray, 5);
+
+        foreach (int var in annotherArray)
+            Console.WriteLine("annother array : {0}", var);
+
+
+        // find
+        int[] arrayofNumber = { 1, 2, 24, 25 };
+        Console.WriteLine(" > 10 : {0}",Array.Find(arrayofNumber,GT10));
+
         Console.Read();
     }
 
+    private static bool GT10(int obj)
+    {
+        return obj > 10;
+    }
+
+    private static void PrintIntArray(int[] arrayOfint_2, string v)
+    {
+        if (v.Equals("foreach"))
+        {
+            Console.WriteLine("with foreach");
+            foreach (int item in arrayOfint_2)
+            {
+                Console.WriteLine("value: {0}",
+                    item);
+            }
+        }
+        else
+        {
+            Console.WriteLine("with for");
+            for (int i = 0; i < arrayOfint_2.Length; i++)
+            {
+                
+                    Console.WriteLine("array {0}: value: {1}",
+                        i, arrayOfint_2[i]);
+                
+
+            }
+        }
+    }
+
+    private static void PrintStringArray(string[,] array2dOfString, string v)
+    {
+        if (v.Equals("foreach"))
+        {
+            Console.WriteLine("with foreach");
+            foreach (string item in array2dOfString)
+            {
+                Console.WriteLine("value: {0}",
+                    item);
+            }
+        }
+        else
+        {
+            Console.WriteLine("with for");
+            for (int i = 0; i < array2dOfString.GetLength(0); i++)
+            {
+                for (int j = 0; j < array2dOfString.GetLength(1); j++)
+                {
+                    Console.WriteLine("array {0},{1}: value: {2}",
+                        i, j, array2dOfString.GetValue(i, j));
+                }
+
+            }
+        }
+    }
+
+    private static void SayHello()
+    {
+        Console.WriteLine("veuillez saisir votre Nom : ");
+        string name = Console.ReadLine();
+        Console.WriteLine("Hello {0}", name);
+    }
 }
