@@ -7,7 +7,7 @@ namespace Csharp_tuto.Day1
 {
     class TP3
     {
-        static void Main()
+        static void Main3()
         {
             int valeurATrouver = new Random().Next(0, 100);
             int nombreDeCoups = 0;
@@ -16,7 +16,8 @@ namespace Csharp_tuto.Day1
 while (!trouve)
             {
 
-                string saisie = Console.ReadLine(); int valeurSaisie;
+                string saisie = Console.ReadLine();
+                int valeurSaisie;
                 if(int.TryParse(saisie, out valeurSaisie))
                 {
                     if (valeurSaisie == valeurATrouver) trouve = true;
