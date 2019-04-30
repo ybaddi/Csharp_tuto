@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{00000000-0000-0000-0000-000000000000}</ProjectGuid>
+    <ProjectGuid>{C893FB22-6274-437A-887A-3B89F2D12C3B}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
     <AssemblyName>ConsoleApplication</AssemblyName>
@@ -29,14 +29,131 @@
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Csharp_tuto</RootNamespace>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.9.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".git\COMMIT_EDITMSG" />
+    <None Include=".git\config" />
+    <None Include=".git\description" />
+    <None Include=".git\HEAD" />
+    <None Include=".git\hooks\applypatch-msg.sample" />
+    <None Include=".git\hooks\commit-msg.sample" />
+    <None Include=".git\hooks\fsmonitor-watchman.sample" />
+    <None Include=".git\hooks\post-update.sample" />
+    <None Include=".git\hooks\pre-applypatch.sample" />
+    <None Include=".git\hooks\pre-commit.sample" />
+    <None Include=".git\hooks\pre-push.sample" />
+    <None Include=".git\hooks\pre-rebase.sample" />
+    <None Include=".git\hooks\pre-receive.sample" />
+    <None Include=".git\hooks\prepare-commit-msg.sample" />
+    <None Include=".git\hooks\update.sample" />
+    <None Include=".git\index" />
+    <None Include=".git\info\exclude" />
+    <None Include=".git\logs\HEAD" />
+    <None Include=".git\logs\refs\heads\master" />
+    <None Include=".git\logs\refs\remotes\origin\HEAD" />
+    <None Include=".git\logs\refs\remotes\origin\master" />
+    <None Include=".git\objects\05\671921be3fe115291700caa86a396f89ce45a8" />
+    <None Include=".git\objects\0f\bd0321d1b6bca769e7cfce87c54c76969d2606" />
+    <None Include=".git\objects\15\7effddaed5f7aa10948887d45808c5aa3a6ea3" />
+    <None Include=".git\objects\17\5cdf274f71e47422808270f75a1311a683c9ea" />
+    <None Include=".git\objects\17\de1939c14501ae6444a9ca8eaf6cfe8051bff6" />
+    <None Include=".git\objects\1a\97b6047066500dfd54f22f11637aaa337cd455" />
+    <None Include=".git\objects\1f\51e73c0ffcb1e76eefb5c39a5e5bc063807ae1" />
+    <None Include=".git\objects\23\6bae8bfd16995bf7943e4d08ec8e1fa32a4e46" />
+    <None Include=".git\objects\30\1e98e4fb0ef4e24ff417c02f9ec1ed378dfde3" />
+    <None Include=".git\objects\40\0f349d9eb712a141aba048d661986ec8e4c84b" />
+    <None Include=".git\objects\45\07411a559e98b671bdeeb52543da6ec2037584" />
+    <None Include=".git\objects\47\7760f08231e6ebae725833815322b90e7f44dc" />
+    <None Include=".git\objects\47\b32c3532e9559786a339d64521764f37008e10" />
+    <None Include=".git\objects\4d\9ff1b0b59021c816135d1e872ab5919062c00e" />
+    <None Include=".git\objects\57\3dd1a232f3c78f5ac7d4261fb108d478859e04" />
+    <None Include=".git\objects\59\e0450917e1a7e475d1b034b4ee39f8f60e9f85" />
+    <None Include=".git\objects\5e\8bc352f52e80d9b321ef0301a2da1f3008f7ec" />
+    <None Include=".git\objects\6e\bb9d83bd6e6cc62b2c1d14864695f2da6d620d" />
+    <None Include=".git\objects\7d\301ea68239b0ed24195ab05b4c1889fe46780c" />
+    <None Include=".git\objects\84\57b383aac9a443d3e35b1646cb75e06abf97a6" />
+    <None Include=".git\objects\87\216d74a82c90915e97d865cbc2394888a735e1" />
+    <None Include=".git\objects\8b\d2cea49473c054a9d9f27e48994aa89d2d94f2" />
+    <None Include=".git\objects\97\5dbc4cd2a40ab8e437e838f5750c00221b24ae" />
+    <None Include=".git\objects\a5\b5b9c24c0faffc263f5609995f68df18a5d7fd" />
+    <None Include=".git\objects\a7\81b9fc10eb0ee68bc67f7f06d6528cf2297345" />
+    <None Include=".git\objects\a9\455e1679599604b2cff11ef37e03679dee95ec" />
+    <None Include=".git\objects\b1\31ba8ab304a564863666464aa838e18b2bea51" />
+    <None Include=".git\objects\b2\f9fdf1d7c96df42b1e8df8c1632716226bd4fc" />
+    <None Include=".git\objects\b8\8afcf4cad555102bcabc1cf395585f9eb2a1d2" />
+    <None Include=".git\objects\c4\b687e85da37c0c684a5f3280abbe301d9d5269" />
+    <None Include=".git\objects\cd\60b4645e654179851d2776050622ba86539a8e" />
+    <None Include=".git\objects\e0\f627369571e8e84ea22c34acea4e65fa2bed9a" />
+    <None Include=".git\objects\e1\c115ee30da35aa4a64d3be89c5173dd2951f1d" />
+    <None Include=".git\objects\e5\1d33a3d839deac6b34de2640782baac39c26bc" />
+    <None Include=".git\objects\eb\6c315416511ea4afd411899efb85eeb4491d68" />
+    <None Include=".git\objects\f2\8283190e7850a35c005ccfed8b607ee3109850" />
+    <None Include=".git\packed-refs" />
+    <None Include=".git\refs\heads\master" />
+    <None Include=".git\refs\remotes\origin\HEAD" />
+    <None Include=".git\refs\remotes\origin\master" />
+    <None Include=".idea\.idea.Csharp_tuto\riderModule.iml" />
+    <None Include=".vs\formation_csharp_2\v15\.suo" />
+    <None Include=".vs\ProjectSettings.json" />
+    <None Include=".vs\slnx.sqlite" />
+    <None Include=".vs\VSWorkspaceState.json" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".idea\.idea.Csharp_tuto\.idea\contentModel.xml" />
+    <Content Include=".idea\.idea.Csharp_tuto\.idea\encodings.xml" />
+    <Content Include=".idea\.idea.Csharp_tuto\.idea\indexLayout.xml" />
+    <Content Include=".idea\.idea.Csharp_tuto\.idea\misc.xml" />
+    <Content Include=".idea\.idea.Csharp_tuto\.idea\modules.xml" />
+    <Content Include=".idea\.idea.Csharp_tuto\.idea\vcs.xml" />
+    <Content Include=".idea\.idea.Csharp_tuto\.idea\workspace.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Day1\Example1.cs" />
+    <Compile Include="Day1\Example2.cs" />
+    <Compile Include="Day1\Example3.cs" />
+    <Compile Include="Day1\TP1.cs" />
+    <Compile Include="Day1\TP2.cs" />
+    <Compile Include="Day1\TP3.cs" />
+    <Compile Include="Day2\Example1.cs" />
+    <Compile Include="Day2\TP4.cs" />
+    <Compile Include="Day3\Example1\Animal.cs" />
+    <Compile Include="Day3\Example1\Programm.cs" />
+    <Compile Include="Day3\Example2\Programm.cs" />
+    <Compile Include="Day3\Example2\ShapsMath.cs" />
+    <Compile Include="Day3\Example3\nullable.cs" />
+    <Compile Include="Day3\Example4\Animal.cs" />
+    <Compile Include="Day3\Example4\Programm.cs" />
+    <Compile Include="Day3\Example5\Animal.cs" />
+    <Compile Include="Day3\Example5\AnimalInfo.cs" />
+    <Compile Include="Day3\Example5\Dog.cs" />
+    <Compile Include="Day3\Example5\Programm.cs" />
+    <Compile Include="Day4\Example1\ArrayListExample.cs" />
+    <Compile Include="Day4\Example2\Example2.cs" />
+    <Compile Include="Day4\Example3\Owner.cs" />
+    <Compile Include="Day4\Example3\Programm.cs" />
+    <Compile Include="Day4\Example4\BDMAnage.cs" />
+    <Compile Include="Day4\Example4\Programm.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".git\branches\" />
+    <Folder Include=".git\objects\info\" />
+    <Folder Include=".git\objects\pack\" />
+    <Folder Include=".git\refs\tags\" />
+    <Folder Include=".vs\Csharp_tuto\v15\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>

@@ -9,6 +9,7 @@ namespace Csharp_tuto.Day3.Example5
     {
         protected string name;
         protected string sound;
+        protected readonly int num = 0;
 
         AnimalInfo animalInfo = new AnimalInfo();
 

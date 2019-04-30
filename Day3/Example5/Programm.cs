@@ -7,7 +7,7 @@ namespace Csharp_tuto.Day3.Example5
 {
     class Programm
     {
-        public static void Main()
+        public static void Main1()
         {
             Animal cat = new Animal();
 
